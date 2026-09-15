@@ -9,7 +9,11 @@ import dev.nextftc.robot.opmode.NextTeleop;
 
 @NextTeleop(name = "My Teleop")
 public class MyTeleop extends NextOpMode {
-    public MyTeleop(Robot robot) { super(robot, BulkReadHook.INSTANCE); }
+    private final Robot robot;
+    public MyTeleop(Robot robot) {
+        super(robot, BulkReadHook.INSTANCE);
+        this.robot = robot;
+    }
 
     @Override
     public void start() {
